@@ -52,8 +52,8 @@ function randomGif() {
 
 function displayGif({ gifUrl, gifTitle }) {
     var html = `
-                <img src="${gifUrl}" alt="${gifTitle}">
-                <button style="color: #000;">GET NEW GIF</button>
+                <button class="btn btn-warning text-uppercase w-25 mx-auto my-4">Random Gif</button>            
+                <img src="${gifUrl}" alt="${gifTitle}" class="img-fluid mx-auto">
                 `;
     card.innerHTML = html;
 }
