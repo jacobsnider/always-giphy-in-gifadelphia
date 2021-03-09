@@ -50,7 +50,7 @@ function randomGif() {
 
 function displayGif({ gifUrl, gifTitle }) {
     var html = `
-                <div class="img-div" style="height: 20rem">
+                <div class="img-div" style="height: 22rem">
                     <img src="${gifUrl}" alt="${gifTitle}" class="img-fluid d-block mx-auto">
                 </div>
                 <button class="btn btn-warning text-uppercase w-50 mx-auto my-5">random gif</button>
@@ -60,7 +60,7 @@ function displayGif({ gifUrl, gifTitle }) {
 
 function fetchNewGif() {
     let random = giphyResults[~~(Math.random() * giphyResults.length)];
-    console.log(random, giphyResults)
+    // console.log(random, giphyResults)
     displayGif({ gifUrl: random.images.original.url, gifTitle: random.title });
 }
 
