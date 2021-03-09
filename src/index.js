@@ -1,5 +1,3 @@
-// const fetch = require('node-fetch');
-
 const card = document.querySelector('.card');
 const img = card.querySelector('img');
 const btn = card.querySelector('button');
@@ -52,8 +50,10 @@ function randomGif() {
 
 function displayGif({ gifUrl, gifTitle }) {
     var html = `
-                <button class="btn btn-warning text-uppercase w-25 mx-auto my-4">Random Gif</button>            
-                <img src="${gifUrl}" alt="${gifTitle}" class="img-fluid mx-auto">
+                <div class="img-div" style="height: 20rem">
+                    <img src="${gifUrl}" alt="${gifTitle}" class="img-fluid d-block mx-auto">
+                </div>
+                <button class="btn btn-warning text-uppercase w-50 mx-auto my-5">random gif</button>
                 `;
     card.innerHTML = html;
 }

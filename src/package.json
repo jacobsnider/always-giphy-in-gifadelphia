@@ -1,0 +1,14 @@
+{
+    "name": "always-giphy-in-gifadelphia",
+    "version": "1.0.0",
+    "description": "Random gif generator for It's Always Sunny In Philadelphia",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+    },
+    "author": "Jake Snider",
+    "license": "ISC",
+    "dependencies": {
+        "bootstrap": "^4.6.0"
+    }
+}
