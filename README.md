@@ -36,9 +36,6 @@ The Giphy API is utilized to retrieve relevant gifs.
 
 An array is created from parsed JSON, that data is passed to a randomizer function which picks a random gif from the array then displays it on the site. 
 
-###### *Create and use a function that accepts two or more values (parameters), calculates or determines a new value based on those inputs, and returns a new value 
-
-A new random gif is fetched from the array with an on-click event by utilizing the parameters gifUrl and gifTitle from the randomGif function.
 
 ## NOTES
 Pull the project locally and preview the index.html in a browser. Click to display a new random gif. 
