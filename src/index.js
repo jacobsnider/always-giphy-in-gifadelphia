@@ -1,6 +1,7 @@
 const card = document.querySelector('.card');
 const img = card.querySelector('img');
 const btn = card.querySelector('button');
+var cnt = 0;
 var giphyResults;
 
 
@@ -64,7 +65,13 @@ function fetchNewGif() {
     displayGif({ gifUrl: random.images.original.url, gifTitle: random.title });
 }
 
+function clickCount() {
+    cnt += 1;
+    var divData = document.getElementById("clickCount");
+    divData.innerHTML = `You've seen ${cnt} gifs now.`;
+}
 // --------------- 
 // EVENT LISTENERS
 // ---------------
 card.addEventListener('click', fetchNewGif.bind(this));
+card.addEventListener('click', clickCount);
