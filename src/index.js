@@ -1,7 +1,8 @@
 const card = document.querySelector('.card');
 const img = card.querySelector('img');
 const btn = card.querySelector('button');
-var cnt = 0;
+const deadline = '2021-11-17';
+var cnt = 1;
 var giphyResults;
 
 
@@ -10,7 +11,6 @@ const giphy = {
     baseURL: "https://api.giphy.com/v1/gifs/",
     apiKey: "dc6zaTOxFJmzC",
     tag: `It's Always Sunny In Philadelphia`,
-
 };
 // API URL -> https://api.giphy.com/v1/gifs/search?q=It%27s%20Always%20Sunny%20In%20Philadelphia&api_key=dc6zaTOxFJmzC
 const url = `${giphy.baseURL}search?q=${giphy.tag}&api_key=${giphy.apiKey}`;
@@ -51,10 +51,10 @@ function randomGif() {
 
 function displayGif({ gifUrl, gifTitle }) {
     var html = `
-                <div class="img-div" style="height: 22rem">
+                <button class="btn btn-warning text-uppercase w-50 mx-auto my-3">random gif</button>
+                <div class="img-div">
                     <img src="${gifUrl}" alt="${gifTitle}" class="img-fluid d-block mx-auto">
                 </div>
-                <button class="btn btn-warning text-uppercase w-50 mx-auto my-5">random gif</button>
                 `;
     card.innerHTML = html;
 }
@@ -70,6 +70,40 @@ function clickCount() {
     var divData = document.getElementById("clickCount");
     divData.innerHTML = `You've seen ${cnt} gifs now.`;
 }
+
+function getTimeRemaining(endtime) {
+    const total = Date.parse(endtime) - Date.parse(new Date());
+    const seconds = Math.floor((total / 1000) % 60);
+    const minutes = Math.floor((total / 1000 / 60) % 60);
+    const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+    const days = Math.floor(total / (1000 * 60 * 60 * 24));
+
+    return {
+        total,
+        days,
+        hours,
+        minutes,
+        seconds
+    };
+}
+
+function initializeClock(id, endtime) {
+    const clock = document.getElementById(id);
+    const timeinterval = setInterval(() => {
+        const t = getTimeRemaining(endtime);
+        clock.innerHTML =
+            'Only ' + t.days + 'days, ' +
+            t.hours + 'hours, ' +
+            t.minutes + 'minutes, ' +
+            t.seconds + 'seconds left until the next season premiere.';
+        if (t.total <= 0) {
+            clearInterval(timeinterval);
+        }
+    }, 1000);
+}
+
+initializeClock('clockdiv', deadline);
+
 // --------------- 
 // EVENT LISTENERS
 // ---------------

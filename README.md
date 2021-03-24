@@ -36,6 +36,9 @@ The Giphy API is utilized to retrieve relevant gifs.
 
 An array is created from parsed JSON, that data is passed to a randomizer function which picks a random gif from the array then displays it on the site. 
 
+##### *Calculate and display data based on an external factor (ex: get the current date, and display how many days remaining until some event)
+
+A counter displays the time left until the next speculative release date of the next season. 
 
 ## NOTES
 Pull the project locally and preview the index.html in a browser. Click to display a new random gif. 
