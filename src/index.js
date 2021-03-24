@@ -69,7 +69,12 @@ function clickCount() {
     cnt += 1;
     var divData = document.getElementById("clickCount");
     divData.innerHTML = `You've seen ${cnt} gifs now.`;
+    if (cnt > 10) {
+        var divData = document.getElementById("getOut");
+        divData.innerHTML = `Maybe you should go outside instead.`;
+    }
 }
+
 
 function getTimeRemaining(endtime) {
     const total = Date.parse(endtime) - Date.parse(new Date());
